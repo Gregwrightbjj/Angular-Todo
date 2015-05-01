@@ -1,0 +1,39 @@
+<!Doctype html>
+<html ng-app="ToDo">
+  <head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/angular.js"></script>
+    <script src="js/index.js"></script>
+   
+  </head>
+  <body ng-controller="TodoCtrl">
+ <div class="big">
+ <div class="container">
+ 	<h4 class="list-group-item title">Angular Todos</h4>
+	<!-- List of todos -->
+	<div class="list-group-item" ng-repeat="todo in todos">
+		<input type="checkbox" ng-model= "todo.done" />
+		<input type="text" ng-model= "todo.text" class="todo"/>
+		<a href="" ng-click="move($index, 'up')"><span class="glyphicon glyphicon-arrow-up"></span></a>
+		<a href="" ng-click="move($index, 'down')"><span class="glyphicon glyphicon-arrow-down"></span></a>
+		<a href="" ng-click="removeTodo($index)"><span class="glyphicon glyphicon-remove-circle"></span></a>
+		
+	</div>
+	<!-- Preview as you type -->
+	<div class="list-group-item" ng-show="todoText">
+		<input type="checkbox" disabled="true"/>
+		<input type="text" disabled="true" class="todo" placeholder="{{todoText}}"/>
+	</div>
+	<!-- Add todo form -->
+	<form class="list-group-item"ng-submit="addTodo()">
+		<input type="text" ng-model="todoText">
+		<input type="submit" >
+	</form>
+ </div>
+  
+  </div>
+
+  </body>
+  
+</html>

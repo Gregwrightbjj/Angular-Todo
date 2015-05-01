@@ -1,0 +1,15 @@
+.todo{
+  border: none;
+}
+.container{
+  width: 400px;
+}
+.title{
+  background: #f5f5f5;
+}
+.big{
+   width:100%;
+  background: url("img/intro-bg.jpg");
+  background-size: cover;
+  height:100vh;
+}
